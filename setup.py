@@ -4,7 +4,8 @@ try:
     from setuptools import setup
 except ImportError:
     from distutils.core import setup
-
+import os
+import re
 # reading package version (same way sqlalchemy does)
 with open(os.path.join(os.path.dirname(__file__),'pyvalidate', '__init__.py')) as v_file:
     package_version = re.compile(r".*__version__ = '(.*?)'",re.S).match(v_file.read()).group(1)
